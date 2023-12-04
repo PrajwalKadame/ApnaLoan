@@ -13,9 +13,9 @@ public interface EnrolmentCenterRepository extends JpaRepository<EnrolmentCenter
 	EnrolmentCenter addUser(int center_id);
 	
 	
-//	@Transactional
-//	@Modifying
-//	@Query(value="update enrolment_center set status=:status where center_id=:center_id", nativeQuery=true)
-//	void approveCenter(EnrolmentCenter center);
+	@Transactional
+	@Modifying
+	@Query(value="update enrolment_center set status=:status where center_id=:center_id", nativeQuery=true)
+	void approveCenter(@Param("center_id") int center_id, @Param("status") int status);
 
 }

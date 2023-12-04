@@ -33,7 +33,7 @@ public class EnrolmentCenterServiceImpl implements EnrolmentCenterDao{
 
 	@Override
 	public String approveCenter(EnrolmentCenter center) {
-		centerrepo.save(center);
+		centerrepo.approveCenter(center.getCenter_id(), center.getStatus());
 		return "Center approved";
 	}
 
